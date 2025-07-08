@@ -1,7 +1,7 @@
 const getUserChoice = (userInput) => {
   userInput = userInput.toLowerCase();
 
-  if(userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
+  if(userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb') {
     return userInput;
   } else {
     console.log('Error, Type either rock, paper, or scissors.');
@@ -29,25 +29,27 @@ const determineWinner = (userChoice, computerChoice) => {
       return 'Paper beats rock!\nThe Computer WINS!';
     } else {
 
-      return 'Rock beats scissors!\nUser WINS!'
+      return 'Rock beats scissors!\nUser WINS!';
     }
   } else if(userChoice === 'paper') {
     if(computerChoice === 'scissors') {
       return 'Scissors beats paper!\nThe Computer WINS!';
     } else {
-      return 'Paper beats rock!\nUser WINS!'
+      return 'Paper beats rock!\nUser WINS!';
     }
   } else if(userChoice === 'scissors') {
     if(computerChoice === 'rock') {
       return 'Rock beats scissors!\nThe Computer WINS!';
     } else {
-      return 'Scissors beats paper!\nUser WINS!'
+      return 'Scissors beats paper!\nUser WINS!';
     }
+  } else {
+    return 'Bomb beats everything!\nUser WINS!';
   }
 }
 
 const playGame = () => {
-  
+
   const userChoice = getUserChoice('rock');
   const computerChoice = getComputerChoice();
   console.log('You threw: ' + userChoice);
@@ -58,6 +60,3 @@ const playGame = () => {
 }
 
 playGame();
-
-
-
